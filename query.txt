@@ -1,0 +1,50 @@
+create table mv(
+id integer primary key,
+title text,
+thriller boolean,
+action boolean,
+comedy boolean,
+romance boolean,
+good integer,
+bad integer,
+awesome integer)
+
+create table artists(
+artist_id integer primary key,
+hero text)
+
+insert into  artists(artist_id,hero)
+values(2,"vijay")
+
+create table heroine(
+heroine_id integer primary key,
+heroine text)
+
+
+insert into  heroine(
+  heroine_id ,
+  heroine)
+  values(2,malavika)
+
+sELECT id, heroine_id, …
+FROM mv
+INNER JOIN heroine
+    ON mv.id = heroine.heroine_id
+
+create table skills(
+  skills_id integer primary key,
+  skills text)
+insert into skills(
+  skills_id ,
+  skills )
+  values(3,"cooking")
+alter table artists 
+add column skills1
+
+update artists
+set skills1=1
+where artist_id=1
+select hero,skills from artists
+join skills
+on artists.skills1=skills.skills_id
+
